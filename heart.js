@@ -23,7 +23,7 @@ if (heartCanvas && heartCtx) {
     }
 
     function animateGradient(startTime) {
-        const duration = 7000; // Длительность анимации (в миллисекундах)
+        const duration = 7000;
         const currentTime = Date.now() - startTime;
         let progress = currentTime / duration;
         if (progress > 1) {
@@ -31,11 +31,9 @@ if (heartCanvas && heartCtx) {
         }
 
         const gradient = heartCtx.createLinearGradient(0, 0, heartCanvas.width, heartCanvas.height);
-
-        // Несколько цветов для градиента
-        const color1 = `hsl(${progress * 360}, 100%, 50%)`; // Изменяем оттенок
-        const color2 = `hsl(${(progress + 0.33) * 360}, 100%, 50%)`; // Сдвиг по оттенку
-        const color3 = `hsl(${(progress + 0.66) * 360}, 100%, 50%)`; // Еще один сдвиг
+        const color1 = `hsl(${progress * 360}, 100%, 50%)`;
+        const color2 = `hsl(${(progress + 0.33) * 360}, 100%, 50%)`;
+        const color3 = `hsl(${(progress + 0.66) * 360}, 100%, 50%)`;
 
         gradient.addColorStop(0, color1);
         gradient.addColorStop(0.5, color2);
