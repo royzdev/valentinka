@@ -1,0 +1,151 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1, #f06292, #ec407a); /* Более мягкие цвета */
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  height: 80vh;
+  width: 80vw;
+  background-color: rgba(255, 255, 255, 0.3); /* Больше прозрачности */
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Меньше тени */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Более заметная рамка */
+}
+
+/* Остальные стили остаются без изменений */
+
+.main-screen {
+  text-align: center;
+}
+
+.question-container {
+  margin-bottom: 30px;
+}
+
+.main-screen h1 {
+  font-size: 3em;
+  color: #e91e63;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.love-question {
+  font-size: 1.8em;
+  color: #e91e63;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin: 0 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  background-color: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2);
+}
+
+#noButton {
+  background-color: #c2185b;
+  cursor: not-allowed;
+}
+
+#noButton:hover {
+  background-color: #c2185b;
+}
+
+.love-screen {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1); /* Прозрачный фон */
+  z-index: 10;
+  backdrop-filter: blur(5px); /* Размытие для атмосферности */
+  /* Добавляем неоновые тени */
+  box-shadow: 0 0 20px rgba(255, 102, 204, 0.5),
+              0 0 40px rgba(255, 51, 153, 0.4),
+              0 0 60px rgba(255, 0, 102, 0.3);
+}
+
+.love-text {
+  font-size: 5em;
+  color: #e91e63;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 2s ease-in-out forwards, fadeOut 2s 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#starCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#heartCanvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; /* Увеличиваем размер в 3 раза */
+  height: 600px; /* Увеличиваем размер в 3 раза */
+  display: none; /* Изначально скрыт */
+}
